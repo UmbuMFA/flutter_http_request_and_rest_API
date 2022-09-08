@@ -4,21 +4,15 @@ import 'package:flutter_http_request_and_rest_api/models/movie.dart';
 
 class MovieDetail extends StatelessWidget {
   final Movie movie;
-  final String imgPath = 'https://image.tmbd/t/p/w500/';
+  final String imgPath = 'https://image.tmbd.org/t/p/w500/';
 
 
 
-  const MovieDetail(this.movie);
+   MovieDetail(this.movie);
 
   @override
   Widget build(BuildContext context) {
-    String path;
-    if (movie.posterPath != null){
-      path = imgPath + movie.posterPath;
-    } else {
-      path = 
-      'https://images.freeimages.com/images/large-previews/5eb/movie-clapboard-1184339.jpg';
-    }
+    String path  = imgPath + movie.posterPath;
     double height = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
